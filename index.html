@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Noticeboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Shared digital billboard</p>
+      <h1 id="site-title">Public Noticeboard</h1>
+      <p id="site-subtitle" class="hero-copy">A poster wall for announcements, images, and shared updates.</p>
+
+      <div class="hero-actions">
+        <a id="channel-link" class="button button-primary" href="#" target="_blank" rel="noreferrer">Open Are.na channel</a>
+        <span id="board-status" class="status-pill">Loading board…</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="content-column">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Latest posts</p>
+            <h2>Posters and announcements</h2>
+          </div>
+          <p id="last-updated" class="last-updated">Waiting for content…</p>
+        </div>
+
+        <div id="billboard-grid" class="billboard-grid" aria-live="polite"></div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel">
+          <p class="panel-kicker">Update guide</p>
+          <h3>How other users update this billboard</h3>
+          <ol class="steps-list">
+            <li>Open the shared Are.na channel.</li>
+            <li>Add a new image, poster, or announcement link.</li>
+            <li>Refresh this page to show the latest posts.</li>
+          </ol>
+          <p class="panel-note">No code edits are needed once the channel is connected.</p>
+        </section>
+
+        <section class="panel">
+          <p class="panel-kicker">Posting tips</p>
+          <ul class="tips-list">
+            <li>Use bold poster images for easy scanning.</li>
+            <li>Add short titles so announcements stay readable.</li>
+            <li>Include links for event pages, forms, or details.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <template id="card-template">
+    <article class="billboard-card">
+      <div class="card-media-wrap">
+        <img class="card-image" alt="" loading="lazy" />
+        <div class="card-placeholder" aria-hidden="true">Poster</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta-row">
+          <span class="card-type"></span>
+          <span class="card-source">Are.na</span>
+        </div>
+        <h3 class="card-title"></h3>
+        <p class="card-description"></p>
+        <a class="card-link" target="_blank" rel="noreferrer">Open post</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
